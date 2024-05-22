@@ -1,0 +1,16 @@
+label_map:
+  "0": "Helmet"
+  "1": "No Helmet"
+colors:
+  "Helmet": [1, 50, 30]  # Green
+  "No Helmet": [255, 0, 0]  # Red
+
+
+#model configuration
+input_width: 640
+input_height: 640
+batch_size: 1
+input_name: "images"
+output_name: "output0"
+output_size: 8400
+np_dtype: "FP32"
