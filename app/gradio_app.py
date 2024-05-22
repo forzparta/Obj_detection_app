@@ -89,12 +89,17 @@ iface = gr.Interface(
     description="Upload images for inference and chose the model to test.",
     examples=[
         [
-            "/home/forz/Test_deepL/HelmetDetection/experiment/gradio/samples/005304.jpg",
+            "test_images/00000.jpg",
             0.25,
             0.45,
         ],
         [
-            "/home/forz/Test_deepL/HelmetDetection/experiment/gradio/samples/005307.jpg",
+            "test_images/00001.jpg",
+            0.25,
+            0.45,
+        ],
+        [
+            "test_images/00002.jpg",
             0.25,
             0.45,
         ],
