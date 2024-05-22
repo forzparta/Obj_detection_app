@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "Obj_detection_app"
+version = "0.1.0"
+description = ""
+authors = ["Fabio Putino"]
+readme = "README.md"
+
+
+[tool.poetry.dependencies]
+python = "^3.10"
+torch = "^2.1.2"
+torchvision = "^0.16.2"
+PyYAML = "^6.0.1"
+numpy = "^1.26.3"
+opencv-python-headless = "^4.9.0.80"
+gradio = "^4.27.0"
+fastapi = "^0.110.2"
+uvicorn = {extras = ["standard"], version = "^0.29.0"}
+tritonclient = {extras = ["all"], version = "^2.45.0"}
+celery = {extras = ["redis"], version = "^5.4.0"}
+redis = "^5.0.4"
+python-dotenv = "^1.0.1"
+sqlalchemy = "^2.0.25"
+
+
+[tool.poetry.group.dev.dependencies]
+flower = "^2.0.1"
+ipykernel = "^6.29.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

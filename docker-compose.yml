@@ -1,0 +1,40 @@
+version: '3.8'
+services:
+  rabbitmq:
+    image: rabbitmq
+    ports:
+      - "5672:5672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+
+
+  triton:
+    image: nvcr.io/nvidia/tritonserver:23.07-py3
+    ports:
+      - "8000:8000"
+      - "8001:8001"
+      - "8002:8002"
+    volumes:
+      - ./model_repository:/models
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+    command: ["tritonserver", "--model-repository=/models"]
+
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./app:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - rabbitmq
+      - triton
+
+
