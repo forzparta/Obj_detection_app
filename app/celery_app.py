@@ -1,4 +1,5 @@
 import os
+
 from celery import Celery
 from dotenv import dotenv_values
 
@@ -18,6 +19,5 @@ app = Celery(
 )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.start()
-

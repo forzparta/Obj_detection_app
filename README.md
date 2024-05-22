@@ -1,21 +1,19 @@
-
 # Object Detection Application
 
 This repository contains an object detection application using YOLOv8 and Triton Inference Server. The application includes a FastAPI server for handling detection requests, a Celery task queue for asynchronous processing, and a Gradio interface for user interaction.
 
-### Components
+## Components
 
 1. **FastAPI Server**: Handles HTTP requests for image inference.
 2. **Celery Task Queue**: Manages asynchronous processing of image inference tasks.
 3. **Triton Inference Server**: Serves the trained models and performs inference.
 4. **Gradio Interface**: Provides a web-based UI for uploading images and viewing inference results.
-3. **RabbitMQ**: Serves as the message broker for Celery
+5. **RabbitMQ**: Serves as the message broker for Celery
 6. **Docker and Docker Compose**: Containerize and manage the deployment of the application.
-
 
 ## Directory Structure
 
-```
+```bash
 Obj_detection_app/
 ├── app/
 │   ├── celery_task_app/
@@ -47,7 +45,6 @@ Obj_detection_app/
 └── start.sh
 ```
 
-
 ## Setup and Installation
 
 ### Prerequisites
@@ -72,13 +69,11 @@ Obj_detection_app/
    poetry install
    ```
 
-
 3. **Run the application using Docker Compose:**
 
    ```bash
    docker-compose up -d
    ```
-
 
 ## Usage
 
@@ -102,6 +97,7 @@ python app/gradio_app.py
 ### Example
 
 1. **Upload an image:**
+
    - Use the Gradio interface to upload an image.
 
 2. **View results:**
@@ -119,4 +115,3 @@ The model configuration file is located at `app/configs/yolov8n.yaml`. Update th
   Ensure Docker and Docker Compose are correctly installed and configured.
 - **GPU Issues:**
   Ensure NVIDIA drivers and CUDA are correctly installed.
-
